@@ -1,8 +1,8 @@
         <div class="mb-3 mt-3">
           <label for="fbtn">First Button </label>
-          <input type="text" max="20" class="form-control">
+          <input type="text" max="20" class="form-control" [(ngModel)]="storyForm.first_button" (ngModelChange)="addNewItem($event)">
         </div>
         <div class="mb-3">
           <label for="sbtn">Second Button</label>
-          <input type="text" max="20" class="form-control">
+          <input type="text" max="20" class="form-control" [(ngModel)]="storyForm.second_button" (ngModelChange)="addNewItem($event)">
         </div>

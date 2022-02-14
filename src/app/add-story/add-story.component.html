@@ -6,11 +6,11 @@
                 <h1 class="ininfo"><u><b>INTERNAL INFO</b></u></h1>
                 <div class="mb-3 mt-3">
                     <label for="qname">Internal Quest Name </label>
-                    <input type="text" max="20" class="form-control" [(ngModel)]="storyForm.questName">
+                    <input type="text" max="20" class="form-control" [(ngModel)]="storyForm.quest_name">
                   </div>
                   <div class="mb-3">
                     <label for="qdesc">Internal Quest Description</label>
-                    <input type="text" max="200" class="form-control" [(ngModel)]="storyForm.questDesc">
+                    <input type="text" max="200" class="form-control" [(ngModel)]="storyForm.quest_desc">
                   </div>
                   <div class="mb-3">
                     <label for="pawd">Points Awarded </label>
@@ -18,23 +18,24 @@
                   </div>
                   <h1 class="ininfo"><u><b>STORY LINE</b></u></h1>
                   <h1><u>GENERAL STORY</u></h1>
-                  <app-add-story-subgroup></app-add-story-subgroup>
+                  <app-add-story-subgroup  (newItemEvent)="addItem($event)" [headerType]="generalStory"></app-add-story-subgroup>
                   <h1><u>EMPIRE STORY</u></h1>
-                  <app-add-story-subgroup></app-add-story-subgroup>
+                  <app-add-story-subgroup (newItemEvent)="addItem($event)" [headerType]="empireStory"></app-add-story-subgroup>
                   <h1><u>FEDERATION STORY</u></h1>
-                  <app-add-story-subgroup></app-add-story-subgroup>
+                  <app-add-story-subgroup (newItemEvent)="addItem($event)" [headerType]="federationStory"></app-add-story-subgroup>
                   <h1><u>UNION STORY</u></h1>
-                  <app-add-story-subgroup></app-add-story-subgroup>
+                  <app-add-story-subgroup (newItemEvent)="addItem($event)" [headerType]="unionStory"></app-add-story-subgroup>
                   <h1><u>CONCLUSION STORY</u></h1>
-                  <app-add-story-subgroup></app-add-story-subgroup>
+                  <app-add-story-subgroup (newItemEvent)="addItem($event)" [headerType]="conclusionStory"></app-add-story-subgroup>
                   <h1 class="ininfo"><u><b>BUTTONS</b></u></h1>
                   <h1><u>EMPIRE</u></h1>
-                  <app-add-buttons></app-add-buttons>
+                  <app-add-buttons (newItemEventButton)="addItem($event)" [headerType]="empireButton"></app-add-buttons>
                   <h1><u>FEDERATION</u></h1>
-                  <app-add-buttons></app-add-buttons>
+                  <app-add-buttons (newItemEventButton)="addItem($event)" [headerType]="federationButton"></app-add-buttons>
                   <h1><u>UNION</u></h1>
-                  <app-add-buttons></app-add-buttons>
+                  <app-add-buttons (newItemEventButton)="addItem($event)" (newItemEventButton)="addItem($event)" [headerType]="unionButton"></app-add-buttons>
                   <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                  <p *ngIf="isSubmitted">You have successfully submitted</p>
             </div>
         </div>
     

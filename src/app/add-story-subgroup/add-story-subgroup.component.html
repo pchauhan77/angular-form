@@ -1,16 +1,16 @@
 <div class="mb-3 mt-3">
     <label for="mytitle">Title </label>
-    <input type="text" max="200" class="form-control">
+    <input type="text" max="200" class="form-control" [(ngModel)]="storyForm.title" (ngModelChange)="addNewItem($event)">
   </div>
   <div class="mb-3">
     <label for="msg">Message</label>
-    <textarea class="form-control" rows="5" id="comment"></textarea>
+    <textarea class="form-control" rows="5" id="comment" [(ngModel)]="storyForm.mymessage" (ngModelChange)="addNewItem($event)"></textarea>
   </div>
   <div class="mb-3">
     <label for="win">Win 1st</label>
-    <input type="text" max="200" class="form-control">
+    <input type="text" max="200" class="form-control" [(ngModel)]="storyForm.win1" (ngModelChange)="addNewItem($event)">
   </div>
   <div class="mb-3">
     <label for="wins">Win 2nd</label>
-    <input type="text" max="200" class="form-control">
+    <input type="text" max="200" class="form-control" [(ngModel)]="storyForm.win2" (ngModelChange)="addNewItem($event)">
   </div>
